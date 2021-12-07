@@ -39,8 +39,6 @@
             </div>
 
         </form>
-
-
     </div>
 </main>
 <%@ include file="CoreJSP/footer.jsp"%>
