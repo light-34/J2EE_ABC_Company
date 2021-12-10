@@ -19,7 +19,7 @@
                         Services
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <li><a class="dropdown-item" href="display.jsp">Display</a></li>
+                        <li><a class="dropdown-item" href="regdevice.jsp">Device Register</a></li>
                         <li><hr class="dropdown-divider"></li>
                         <li><a class="dropdown-item" href="update.jsp">Update</a></li>
                         <li><hr class="dropdown-divider"></li>
