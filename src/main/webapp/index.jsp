@@ -14,7 +14,7 @@
         <div class="col">
         Register <a href="${pageContext.request.contextPath }/register.jsp">Click here</a>
         </div>
-        <p> </p>
+        <span class="text-success"><%= request.getAttribute("success") != null ? request.getAttribute("success") : ""%></span>
     </div>
 
 </main>
