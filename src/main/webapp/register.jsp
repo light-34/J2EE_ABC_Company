@@ -69,7 +69,7 @@
                 </div>
             </div>
         </form>
-        <span class="text-danger"><%= request.getAttribute("success") != null ? request.getAttribute("success") : ""%></span>
+        <span class="text-success"><%= request.getAttribute("success") != null ? request.getAttribute("success") : ""%></span>
     </div>
 </main>
 <%@ include file="CoreJSP/footer.jsp"%>

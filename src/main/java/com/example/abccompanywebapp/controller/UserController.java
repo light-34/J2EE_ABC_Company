@@ -63,10 +63,11 @@ public class UserController extends HttpServlet {
 
             if(result > 0) {
                 System.out.println("Data Inserted Successfully");
+                RequestDispatcher rd = request.getRequestDispatcher("register.jsp");
+                request.setAttribute("success", "Data Inserted Successfully");
+                rd.forward(request, response);
             }
-            RequestDispatcher rd = request.getRequestDispatcher("register.jsp");
-            request.setAttribute("success", "Data Inserted Successfully");
-            rd.forward(request, response);
+
 
         }
 
