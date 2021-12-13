@@ -14,6 +14,12 @@ import java.io.IOException;
 public class LoginController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
+
+    }
+
+    @Override
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         RequestDispatcher requestDispatcher = request.getRequestDispatcher("login.jsp");
         UserAuth authorize = new UserAuth();
         String message = "Cant be empty";
@@ -26,21 +32,21 @@ public class LoginController extends HttpServlet {
         } else {
             String user = request.getParameter("user");
             String pass = request.getParameter("pass");
-            if (authorize.userAuthorize(user,pass)) {
-                    RequestDispatcher rd = request.getRequestDispatcher("index.jsp");
-                    request.setAttribute("success", user + " logged in.");
-                    rd.forward(request, response);
-            } else {
+            if (authorize.userAuthorize(user,pass).getAdminCheck().equalsIgnoreCase("Y")) {
+                RequestDispatcher rd = request.getRequestDispatcher("admin_home.jsp");
+                request.setAttribute("success", user + " logged in.");
+                rd.forward(request, response);
+            } else if (authorize.userAuthorize(user,pass).getAdminCheck().equalsIgnoreCase("N")) {
+                RequestDispatcher rd = request.getRequestDispatcher("index.jsp");
+                request.setAttribute("success", user + " logged in.");
+                rd.forward(request, response);
+            }
+            else {
                 request.setAttribute("error", "User name or Password did not match");
                 requestDispatcher.forward(request, response);
             }
 
         }
-
-    }
-
-    @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
     }
 }

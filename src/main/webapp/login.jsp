@@ -6,7 +6,7 @@
 <main>
     <div class="container">
         <h1 class="h1 text-center text-black-50"> Login Page </h1>
-        <form action="LoginController" method="get">
+        <form action="LoginController" method="post">
             <div class="row">
                 <div class="col-2">
                     <label for="user">User ID: </label>

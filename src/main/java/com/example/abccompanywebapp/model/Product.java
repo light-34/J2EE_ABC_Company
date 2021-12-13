@@ -1,10 +1,20 @@
 package com.example.abccompanywebapp.model;
 
 public class Product {
+    private int prodId;
     private String name;
 
-    public Product(String name) {
+    public Product(int prodId, String name) {
+        this.prodId = prodId;
         this.name = name;
+    }
+
+    public int getProdId() {
+        return prodId;
+    }
+
+    public void setProdId(int prodId) {
+        this.prodId = prodId;
     }
 
     public String getName() {

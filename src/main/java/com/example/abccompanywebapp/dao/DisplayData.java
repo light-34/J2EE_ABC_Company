@@ -72,8 +72,9 @@ public class DisplayData {
             resultSet = statement.executeQuery();
 
             while (resultSet.next()) {
+                int prodId = resultSet.getInt("productid");
                 String prodName = resultSet.getString("product_name");
-                productList.add(new Product(prodName));
+                productList.add(new Product(prodId, prodName));
             }
         } catch (Exception ex) {
             ex.printStackTrace();

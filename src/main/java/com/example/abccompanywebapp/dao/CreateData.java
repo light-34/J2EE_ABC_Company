@@ -18,7 +18,7 @@ public class CreateData {
         int result = 0;
         try {
             con = DbConnection.getConnection();
-            String sql = "INSERT INTO users VALUES (null,?,?,?,?,?,?,?)";
+            String sql = "INSERT INTO users (username,password,email,cellphone,first_name,last_name,address) VALUES (?,?,?,?,?,?,?)";
             statement = con.prepareStatement(sql);
             statement.setString(1,user.getUserName());
             statement.setString(2,user.getPassword());

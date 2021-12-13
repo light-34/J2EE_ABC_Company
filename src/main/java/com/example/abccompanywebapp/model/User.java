@@ -9,6 +9,7 @@ public class User {
     private String email;
     private String userName;
     private String password;
+    private String adminCheck;
 
     public User(String fname, String lname, String address, String phone, String email, String userName, String password) {
         this.fname = fname;
@@ -27,6 +28,10 @@ public class User {
         this.phone = phone;
         this.email = email;
         this.userName = userName;
+    }
+
+    public User(String adminCheck ) {
+        this.adminCheck = adminCheck;
     }
 
     public String getFname() {
@@ -83,5 +88,13 @@ public class User {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public String getAdminCheck() {
+        return adminCheck;
+    }
+
+    public void setAdminCheck(String adminCheck) {
+        this.adminCheck = adminCheck;
     }
 }

@@ -13,6 +13,9 @@
                 <li class="nav-item">
                     <a class="nav-link" href="about.jsp">About</a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="contact.jsp" >Contact</a>
+                </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
                        data-bs-toggle="dropdown" aria-expanded="false">
@@ -20,17 +23,17 @@
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <li><a class="dropdown-item" href="regdevice.jsp">Device Register</a></li>
-                        <li><hr class="dropdown-divider"></li>
+                        <%--<li><hr class="dropdown-divider"></li>
                         <li><a class="dropdown-item" href="update.jsp">Update</a></li>
                         <li><hr class="dropdown-divider"></li>
-                        <li><a class="dropdown-item" href="insert.jsp">Insert</a></li>
+                        <li><a class="dropdown-item" href="insert.jsp">Insert</a></li>--%>
                     </ul>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="register.jsp" tabindex="-1" aria-disabled="true">Register</a>
+                    <a class="nav-link" href="register.jsp">Register</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="login.jsp" tabindex="-1" aria-disabled="true">Login</a>
+                    <a class="nav-link" href="login.jsp" >Login</a>
                 </li>
             </ul>
             <form class="d-flex">

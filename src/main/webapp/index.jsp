@@ -6,7 +6,7 @@
 <main>
 
     <div class="container">
-        <h1 class="text-center text-black-50">HOME PAGE</h1>
+        <h1 class="text-center text-black-50">WELCOME TO ABC COMPANY</h1>
         <div class="col">
         Home Page <a href="${pageContext.request.contextPath }/index.jsp">Click here</a>
         </div>

@@ -16,7 +16,7 @@ public class UserController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         DisplayData displayData = new DisplayData();
-        RequestDispatcher requestDispatcher = request.getRequestDispatcher("Admin/list_users.jsp");
+        RequestDispatcher requestDispatcher = request.getRequestDispatcher("list_users.jsp");
         String rows = "";
 
         for (User user: displayData.getAllUsers()) {

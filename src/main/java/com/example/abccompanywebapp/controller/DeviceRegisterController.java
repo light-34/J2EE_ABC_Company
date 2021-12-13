@@ -17,7 +17,7 @@ public class DeviceRegisterController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         DisplayData displayData = new DisplayData();
-        RequestDispatcher requestDispatcher = request.getRequestDispatcher("Admin/list_registered_device.jsp");
+        RequestDispatcher requestDispatcher = request.getRequestDispatcher("list_registered_device.jsp");
         String rows = "";
 
         for (RegisteredProduct prod: displayData.getAllRegisteredDevices()) {

@@ -1,5 +1,7 @@
 package com.example.abccompanywebapp.dao;
 
+import com.example.abccompanywebapp.model.User;
+
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -27,7 +29,27 @@ public class UserAuth {
         return isUser;
     }
 
-    public boolean userAuthorize(String userName, String password) {
+    public User userAuthorize(String userName, String password) {
+        User user = null;
+        try {
+            con = DbConnection.getConnection();
+            String sql = "Select * from users where username= ? and password = ?";
+            statement = con.prepareStatement(sql);
+            statement.setString(1, userName);
+            statement.setString(2, password);
+            resultSet = statement.executeQuery();
+            while (resultSet.next()) {
+                user = new User(resultSet.getString("isAdmin"));
+            }
+        } catch (Exception ex) {
+            System.out.println("User authorization Failed");
+            ex.printStackTrace();
+        }
+
+        return user;
+    }
+
+    /*public boolean userAuthorize(String userName, String password) {
         boolean isUserExist = false;
         try {
             con = DbConnection.getConnection();
@@ -45,5 +67,5 @@ public class UserAuth {
         }
 
         return isUserExist;
-    }
+    }*/
 }

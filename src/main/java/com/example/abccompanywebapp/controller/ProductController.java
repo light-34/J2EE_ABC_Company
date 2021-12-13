@@ -14,14 +14,14 @@ public class ProductController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         DisplayData displayData = new DisplayData();
-        RequestDispatcher requestDispatcher = request.getRequestDispatcher("Admin/list_products.jsp");
+        RequestDispatcher requestDispatcher = request.getRequestDispatcher("list_products.jsp");
         String rows = "";
 
         for (Product product: displayData.getAllProducts()) {
             rows += "<tr>" +
+                    "<td>" + product.getProdId() + "</td>" +
                     "<td>" + product.getName() + "</td>" +
-                   /* "<td>" + user.getLname() + "</td>" +
-                    "<td>" + user.getUserName() + "</td>" +
+                    /*"<td>" + user.getUserName() + "</td>" +
                     "<td>" + user.getPhone() + "</td>" +
                     "<td>" + user.getEmail() + "</td>" +
                     "<td>" + user.getAddress() + "</td>" +*/
