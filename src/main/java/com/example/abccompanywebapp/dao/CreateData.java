@@ -18,7 +18,7 @@ public class CreateData {
         int result = 0;
         try {
             con = DbConnection.getConnection();
-            String sql = "INSERT INTO users VALUES (null,?,?,?,?,?,?)";
+            String sql = "INSERT INTO users VALUES (null,?,?,?,?,?,?,?)";
             statement = con.prepareStatement(sql);
             statement.setString(1,user.getUserName());
             statement.setString(2,user.getPassword());
@@ -26,6 +26,7 @@ public class CreateData {
             statement.setString(4,user.getPhone());
             statement.setString(5,user.getFname());
             statement.setString(6,user.getLname());
+            statement.setString(7,user.getAddress());
 
             result = statement.executeUpdate();
         } catch (Exception ex) {

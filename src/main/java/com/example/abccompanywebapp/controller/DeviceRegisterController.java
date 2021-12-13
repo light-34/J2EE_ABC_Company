@@ -1,6 +1,7 @@
 package com.example.abccompanywebapp.controller;
 
 import com.example.abccompanywebapp.dao.CreateData;
+import com.example.abccompanywebapp.dao.DisplayData;
 import com.example.abccompanywebapp.dao.Methods;
 import com.example.abccompanywebapp.dao.UserAuth;
 import com.example.abccompanywebapp.model.RegisteredProduct;
@@ -15,12 +16,24 @@ import java.io.IOException;
 public class DeviceRegisterController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        DisplayData displayData = new DisplayData();
+        RequestDispatcher requestDispatcher = request.getRequestDispatcher("Admin/list_registered_device.jsp");
+        String rows = "";
 
+        for (RegisteredProduct prod: displayData.getAllRegisteredDevices()) {
+            rows += "<tr>" +
+                    "<td>" + prod.getUser() + "</td>" +
+                    "<td>" + prod.getSerial() + "</td>" +
+                    "<td>" + prod.getProdId() + "</td>" +
+                    "<td>" + prod.getpDate() + "</td>" +
+                    "</tr>";
+        }
+        request.setAttribute("rows", rows);
+        requestDispatcher.forward(request,response);
     }
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        Methods methods = new Methods();
         UserAuth authorize = new UserAuth();
         RequestDispatcher requestDispatcher = request.getRequestDispatcher("regdevice.jsp");
         CreateData createData = new CreateData();

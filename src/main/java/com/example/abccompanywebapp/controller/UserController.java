@@ -2,6 +2,7 @@ package com.example.abccompanywebapp.controller;
 
 import com.example.abccompanywebapp.dao.CreateData;
 import com.example.abccompanywebapp.dao.DbConnection;
+import com.example.abccompanywebapp.dao.DisplayData;
 import com.example.abccompanywebapp.model.User;
 
 import javax.servlet.*;
@@ -14,6 +15,22 @@ import java.sql.Connection;
 public class UserController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        DisplayData displayData = new DisplayData();
+        RequestDispatcher requestDispatcher = request.getRequestDispatcher("Admin/list_users.jsp");
+        String rows = "";
+
+        for (User user: displayData.getAllUsers()) {
+            rows += "<tr>" +
+                    "<td>" + user.getFname() + "</td>" +
+                    "<td>" + user.getLname() + "</td>" +
+                    "<td>" + user.getUserName() + "</td>" +
+                    "<td>" + user.getPhone() + "</td>" +
+                    "<td>" + user.getEmail() + "</td>" +
+                    "<td>" + user.getAddress() + "</td>" +
+                    "</tr>";
+        }
+        request.setAttribute("rows", rows);
+        requestDispatcher.forward(request,response);
 
     }
 

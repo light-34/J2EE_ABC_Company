@@ -24,7 +24,6 @@ public class UserAuth {
             System.out.println("Product authorization Failed");
             ex.printStackTrace();
         }
-
         return isUser;
     }
 
@@ -41,7 +40,7 @@ public class UserAuth {
                 isUserExist = true;
             }
         } catch (Exception ex) {
-            System.out.println("Product authorization Failed");
+            System.out.println("User authorization Failed");
             ex.printStackTrace();
         }
 
